@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR AI Anya - Russian Girlfriend</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #1a1a2e; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        canvas { display: block; }
+        #ui-container { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px; text-align: center; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px; border: 1px solid #4a4e69; backdrop-filter: blur(10px); }
+        #chat-log { height: 100px; overflow-y: auto; margin-bottom: 15px; text-align: left; font-size: 14px; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px;}
+        input[type="text"] { width: 70%; padding: 10px; border-radius: 5px; border: none; outline: none; background: #22223b; color: white; }
+        button { padding: 10px 20px; border-radius: 5px; border: none; background: #9a8c98; color: white; cursor: pointer; font-weight: bold; transition: background 0.3s;}
+        button:hover { background: #c9ada7; color: #22223b;}
+        #vr-button { position: absolute; top: 20px; right: 20px; padding: 10px; background: #f2e9e4; color: #22223b; border-radius: 5px; font-weight: bold; cursor: pointer; z-index: 100;}
+    </style>
+</head>
+<body>
+    <button id="vr-button">Enter VR</button>
+    <div id="ui-container">
+        <div id="chat-log">
+            <div><strong>Anya:</strong> プリヴィエート。遅いわね、ずっと待ってたんだから。</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Say something to her..." autocomplete="off">
+        <button id="send-btn">Send</button>
+    </div>
+
+    <!-- Three.js and VRM dependencies -->
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.154.0/examples/jsm/",
+          "@pixiv/three-vrm": "https://unpkg.com/@pixiv/three-vrm@2.0.0/lib/three-vrm.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
